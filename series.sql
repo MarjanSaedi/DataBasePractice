@@ -94,3 +94,8 @@ FROM   reviewers
        LEFT JOIN reviews 
               ON reviewers.id = reviews.reviewer_id 
 GROUP  BY reviewers.id; 
+
+select first_name, title, rating from reviewers
+inner join reviews on reviewers.id = reviews.reviewer_id
+inner join series on series.id = reviews.series_id
+order by title;
